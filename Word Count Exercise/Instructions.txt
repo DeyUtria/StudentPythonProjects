@@ -1,0 +1,2 @@
+Write a function called word_count that takes a string as an input and returns a count of the words in the string that start with the uppercase or lowercase letter the user had input.
+For example, if the user input the letter m and given the sentence: my_sentence = "My gosh, what a beautiful Monday morning this is.", then word_count(my_sentence) should return 3.
