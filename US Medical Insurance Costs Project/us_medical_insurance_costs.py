@@ -66,4 +66,52 @@ class PatientsInfo:
         print("The number of females are: " +str(females))
         print("The number of males are: " +str(males))
 
+#find each unique region patients are from
+def unique_regions(self):
+    unique_regions = []
+    for region in self.patients_regions:
+        if region not in unique_regions:
+            unique_regions.append(region)
+    return unique_regions
+
+#find average yearly medical charges for patients in insurance.csv
+def find_average_charges(self):
+    total_charges = 0
+    for charge in self.patients_insurance_charges:
+        total_charges += float(charge)
+    average_charges = total_charges / len(self.patients_insurance_charges)
+    return ("The average yearly medical insurance charges are: " + str(round(average_charges, 2)))
+
+#create dictionary with all patients information
+def create_dictionary(self):
+    self.patients_dictionary = {}
+    self.patients_dictionary['Age'] = [int(age) for age in self.patients_ages]
+    self.patients_dictionary['Sex'] = self.patients_sexes
+    self.patients_dictionary['BMI'] = self.patients_bmis
+    self.patients_dictionary['Number of Children'] = self.patients_num_of_children
+    self.patients_dictionary['Smoker Status'] = self.patients_smoker_status
+    self.patients_dictionary['Region'] = self.patients_regions
+    self.patients_dictionary['Charges'] = self.patients_insurance_charges
+    return self.patients_dictionary
+
+#The next step is to create an instance of the class called patient_info. With this instance, each method can be used to see the results of the analysis.
+patient_info = PatientsInfo(ages,sexes,bmis,num_of_children,smoker_statuses,regions,insurance_charges)
+print(patient_info.find_average_age())
+#The average patient age is: 39.21
+
+patient_info.analyze_sexes()
+print(patient_info.analyze_sexes())
+#The number of females are: 1324
+#The number of males are: 1352
+
+patient_info.unique_regions()
+print(patient_info.unique_regions())
+#['southwest', 'southeast', 'northwest', 'northeast']
+
+patient_info.find_average_charges()
+print(patient_info.find_average_charges())
+#The average yearly medical insurance charges are: 13270.42 dollars
+
+patient_info.create_dictionary()
+print(patient_info.patients_dictionary)
 
