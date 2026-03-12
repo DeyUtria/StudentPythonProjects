@@ -18,4 +18,4 @@ while count < 1:
         results.append(value)
         count += 1
         print("The result was " + str(value) + " so you lost :(")
-break
+    break
