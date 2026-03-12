@@ -1,0 +1,1 @@
+Write a coin flip program asking the user which side of the coin they would like to choose and when chosen, tell the user if they won or lost after flipping the coin.
